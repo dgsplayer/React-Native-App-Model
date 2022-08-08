@@ -1,0 +1,1330 @@
+{
+	"info": {
+		"_postman_id": "4a3ccc96-6f52-4ab7-bdd7-f32b5520644a",
+		"name": "TrocaTroca",
+		"description": "TrocaTroca API para app React native",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"first_name\":\"John\",\n\t\"last_name\":\"Doe\",\n\t\"email\":\"john@example.com\",\n\t\"password\":\"1234\",\n\t\"password_confirmation\":\"1234\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}user/registration",
+							"host": [
+								"{{url}}user"
+							],
+							"path": [
+								"registration"
+							]
+						},
+						"description": "Register new User"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"item": [
+				{
+					"name": "Social",
+					"item": [
+						{
+							"name": "Social Login",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"first_name\":\"Fernando Igor\",\n\t\"last_name\":\"Fernandes\",\n\t\"email\":\"registers_face@luby.com.br\",\n\t\"token\":\"64DFBCA2D5FD1D9A9555C2F96E944765GVB6G\",\n\t\"type\":\"facebook_token\",\n\t\"push_token\":\"B7C737EAA4FCA35EEC11E2462A5F35GF22\",\n\t\"player_id\":\"986BB7AA8F16B81FGFA521\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}auth/social",
+									"host": [
+										"{{url}}auth"
+									],
+									"path": [
+										"social"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\":\"john@luby.com\",\n\t\"password\":\"12345\",\n\t\"push_token\":\"4A4C3AFC29CCB745EDA14987AFF37\",\n\t\"player_id\":\"12A5565E8FE73391\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}auth",
+							"host": [
+								"{{url}}auth"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "Create category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjcsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9hcGkvYXV0aCIsImlhdCI6MTU1MDE2OTc0MCwiZXhwIjoxNTUwMTczMzQwLCJuYmYiOjE1NTAxNjk3NDAsImp0aSI6Ik1XeEI0NjhlektRTk5DVHQifQ.1GVMWr1sx36L-QaPsQwotArBfikoacFlmL3d2fiHxSA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\":\"Teste\",\n\t\"path\":\"upload/teste/teste.png\",\n\t\"order\":\"5\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}category",
+							"host": [
+								"{{url}}category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjcsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9hcGkvYXV0aCIsImlhdCI6MTU1MDE2OTc0MCwiZXhwIjoxNTUwMTczMzQwLCJuYmYiOjE1NTAxNjk3NDAsImp0aSI6Ik1XeEI0NjhlektRTk5DVHQifQ.1GVMWr1sx36L-QaPsQwotArBfikoacFlmL3d2fiHxSA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\":\"teste edit\",\n\t\"path\":\"path/edit\",\n\t\"order\":2\n}"
+						},
+						"url": {
+							"raw": "{{url}}category/1",
+							"host": [
+								"{{url}}category"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjQsImlzcyI6Imh0dHA6Ly90cm9jYS5sdWJ5LmNvbS5ici9hcGkvYXV0aCIsImlhdCI6MTU0NzE2MjE4NiwiZXhwIjoxNTQ3MTY1Nzg2LCJuYmYiOjE1NDcxNjIxODYsImp0aSI6IlpuaEI3cEk4NGx0Nkc4UWwifQ.awbJhmpLxJkz9n34OWTf27VKScBhkRuWx00abmSLFnQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}category/1",
+							"host": [
+								"{{url}}category"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Categories",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImlzcyI6Imh0dHA6Ly90cm9jYS5sdWJ5LmNvbS5ici9hcGkvYXV0aCIsImlhdCI6MTU0NzczNjczOCwiZXhwIjoxNTQ3NzQwMzM4LCJuYmYiOjE1NDc3MzY3MzgsImp0aSI6IlNvSDNmdWNsaXFZSUZzcWcifQ.4KIE_mF206hijJ5uBiqL20RQwG2tpCZLWMZ8eclAC0Y",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}category",
+							"host": [
+								"{{url}}category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImlzcyI6Imh0dHA6Ly90cm9jYS5sdWJ5LmNvbS5ici9hcGkvYXV0aCIsImlhdCI6MTU0NzQ2MzY4MywiZXhwIjoxNTQ3NDY3MjgzLCJuYmYiOjE1NDc0NjM2ODMsImp0aSI6ImdodHdHWjMzOGVsT3ZhZE0ifQ.pKt7DHsUDmXDmOOAcMi61IS9WQgbxN8J0zT9YPqFWRM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}category/2",
+							"host": [
+								"{{url}}category"
+							],
+							"path": [
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Advertising",
+			"item": [
+				{
+					"name": "Type",
+					"item": [
+						{
+							"name": "List Type",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImlzcyI6Imh0dHA6Ly90cm9jYS5sdWJ5LmNvbS5ici9hcGkvYXV0aCIsImlhdCI6MTU0NzQ2MzY4MywiZXhwIjoxNTQ3NDY3MjgzLCJuYmYiOjE1NDc0NjM2ODMsImp0aSI6ImdodHdHWjMzOGVsT3ZhZE0ifQ.pKt7DHsUDmXDmOOAcMi61IS9WQgbxN8J0zT9YPqFWRM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "https://troca.luby.com.br/api/advertising/type",
+									"protocol": "http",
+									"host": [
+										"troca",
+										"luby",
+										"com",
+										"br"
+									],
+									"path": [
+										"api",
+										"advertising",
+										"type"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Type",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImlzcyI6Imh0dHA6Ly90cm9jYS5sdWJ5LmNvbS5ici9hcGkvYXV0aCIsImlhdCI6MTU0NzQ2MzY4MywiZXhwIjoxNTQ3NDY3MjgzLCJuYmYiOjE1NDc0NjM2ODMsImp0aSI6ImdodHdHWjMzOGVsT3ZhZE0ifQ.pKt7DHsUDmXDmOOAcMi61IS9WQgbxN8J0zT9YPqFWRM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "https://troca.luby.com.br/api/advertising/type/1",
+									"protocol": "http",
+									"host": [
+										"troca",
+										"luby",
+										"com",
+										"br"
+									],
+									"path": [
+										"api",
+										"advertising",
+										"type",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Create Advertising",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjcsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9hcGkvYXV0aCIsImlhdCI6MTU0OTk4Mzc2MiwiZXhwIjoxNTQ5OTg3MzYyLCJuYmYiOjE1NDk5ODM3NjIsImp0aSI6ImFyS2YxUlUwYVRYdURxYVIifQ.uKcwrLbqkFT3KwWmdhgqi-0imXHVPXK5SvXGkv3J010",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\":\"Aluguel de cadeiras\",\n\t\"type\":{\n\t\t\"name\":\"Serviço\"\n\t},\n\t\"category\":{\n\t\t\"name\":\"Geral\"\n\t},\n\t\"cep\":\"69900-025\",\n\t\"exchange_by\":\"Bicleta aro 26\",\n\t\"main_image\":\"data:image/png;base64\",\n\t\"description\":\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec semper imperdiet erat, quis fringilla ex dignissim eget. Etiam quis nunc mollis, faucibus elit id, sollicitudin elit\",\n\t\t\"images\":[\n\t\t{\n\t\t\t\"path\":\"data:image/png;base64\"\n\t\t},\n\t\t{\n\t\t\t\"path\":\"data:image/png;base64\"\n\t\t},\n\t\t{\n\t\t\t\"path\":\"data:image/png;base64\"\n\t\t}\n\t]\n}"
+						},
+						"url": {
+							"raw": "{{url}}advertising",
+							"host": [
+								"{{url}}advertising"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Advertising",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImlzcyI6Imh0dHA6Ly90cm9jYS5sdWJ5LmNvbS5ici9hcGkvYXV0aCIsImlhdCI6MTU0NzQ2MzY4MywiZXhwIjoxNTQ3NDY3MjgzLCJuYmYiOjE1NDc0NjM2ODMsImp0aSI6ImdodHdHWjMzOGVsT3ZhZE0ifQ.pKt7DHsUDmXDmOOAcMi61IS9WQgbxN8J0zT9YPqFWRM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\":\"Nintendo 3ds XL\",\n\t\"type\":{\n\t\t\"name\":\"Produto\"\n\t},\n\t\"category\":{\n\t\t\"name\":\"Geral\"\n\t},\n\t\"cep\":\"05410-030\",\n\t\"main_image\":\"\",\n\t\"status\":true,\n\t\"exchange_by\":\"Bicicleta\",\n\t\"description\":\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec semper imperdiet erat, quis fringilla ex dignissim eget. Etiam quis nunc mollis, faucibus elit id, sollicitudin elit\",\n\t\"images\":[\n\t\t{\n\t\t\t\"path\":\"upload/cat/image1.png\"\n\t\t},\n\t\t{\n\t\t\t\"path\":\"upload/cat/image2.png\"\n\t\t},\n\t\t{\n\t\t\t\"path\":\"upload/cat/image3.png\"\n\t\t}\n\t]\n}"
+						},
+						"url": {
+							"raw": "{{url}}advertising/1",
+							"host": [
+								"{{url}}advertising"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Advertising",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjcsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9hcGkvYXV0aCIsImlhdCI6MTU0ODM2NjA3OCwiZXhwIjoxNTQ4MzY5Njc4LCJuYmYiOjE1NDgzNjYwNzgsImp0aSI6ImpvdVl6SE1ROWFBM0tybFEifQ.Q04NB1wgvoHHQsfNNReLNbSpcmM4pvpdfM9u6QkmbGo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}advertising?group=true&category=geral&type=serviço&area=12&lat=-23.457330&lng=-46.684660&q=carteira",
+							"host": [
+								"{{url}}advertising"
+							],
+							"query": [
+								{
+									"key": "group",
+									"value": "true"
+								},
+								{
+									"key": "category",
+									"value": "geral"
+								},
+								{
+									"key": "type",
+									"value": "serviço"
+								},
+								{
+									"key": "area",
+									"value": "12"
+								},
+								{
+									"key": "lat",
+									"value": "-23.457330"
+								},
+								{
+									"key": "lng",
+									"value": "-46.684660"
+								},
+								{
+									"key": "q",
+									"value": "carteira"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Advertising",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjcsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9hcGkvYXV0aCIsImlhdCI6MTU0ODAyNTI5MCwiZXhwIjoxNTQ4MDI4ODkwLCJuYmYiOjE1NDgwMjUyOTAsImp0aSI6Ikx4REYzM2pvamoycm1DV3oifQ.gdJ0c1tU4L3RDNafuwBenRpfgX3n2f3xprZeV2za7WQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}advertising/1?lat=-23.457330&lng=-46.684660",
+							"host": [
+								"{{url}}advertising"
+							],
+							"path": [
+								"1"
+							],
+							"query": [
+								{
+									"key": "lat",
+									"value": "-23.457330"
+								},
+								{
+									"key": "lng",
+									"value": "-46.684660"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Advertising",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImlzcyI6Imh0dHA6Ly90cm9jYS5sdWJ5LmNvbS5ici9hcGkvYXV0aCIsImlhdCI6MTU0NzQ2MzY4MywiZXhwIjoxNTQ3NDY3MjgzLCJuYmYiOjE1NDc0NjM2ODMsImp0aSI6ImdodHdHWjMzOGVsT3ZhZE0ifQ.pKt7DHsUDmXDmOOAcMi61IS9WQgbxN8J0zT9YPqFWRM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}advertising/2",
+							"host": [
+								"{{url}}advertising"
+							],
+							"path": [
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Destaques",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjcsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9hcGkvYXV0aCIsImlhdCI6MTU0ODAyODkzMiwiZXhwIjoxNTQ4MDMyNTMyLCJuYmYiOjE1NDgwMjg5MzIsImp0aSI6Im1nZkhLd2ZQUHQzZVpOZnYifQ.nH309nrQDMZS2HrJVmrlvsR89hFtJ1l4uJMEXJNL9i8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}advertising/featured?category=games",
+							"host": [
+								"{{url}}advertising"
+							],
+							"path": [
+								"featured"
+							],
+							"query": [
+								{
+									"key": "category",
+									"value": "games"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Finish advertising",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjcsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9hcGkvYXV0aCIsImlhdCI6MTU0ODM2Mzk1MiwiZXhwIjoxNTQ4MzY3NTUyLCJuYmYiOjE1NDgzNjM5NTIsImp0aSI6Inc2blZwT1hjZkJqYzNGV0gifQ.aS-WxKVKIRuGP54QDeSem1DM7BZJ_2lKB43zH89838E",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"reason_to_finish\":\"Outro\",\n\t\"describe_reason_to_finish\":\"Eu perdi esse item, não tenho mais o item\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}advertising/19/finish",
+							"host": [
+								"{{url}}advertising"
+							],
+							"path": [
+								"19",
+								"finish"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Random Ads",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjI4LCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2F1dGgiLCJpYXQiOjE1NTY1NjI4MjUsImV4cCI6MTU1NjU3MDAyNSwibmJmIjoxNTU2NTYyODI1LCJqdGkiOiJBekVvNTdpRzVQN2xYVnVqIn0.GQ3eMQLSKqPipQQ7y1xutaIGXmFuIUfICz6UoT0VpSU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}random/advertising?area=10&lat=-9.9775868&lng=-67.8103627",
+							"host": [
+								"{{url}}random"
+							],
+							"path": [
+								"advertising"
+							],
+							"query": [
+								{
+									"key": "area",
+									"value": "10"
+								},
+								{
+									"key": "lat",
+									"value": "-9.9775868"
+								},
+								{
+									"key": "lng",
+									"value": "-67.8103627"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Advertising",
+					"item": [
+						{
+							"name": "List Actives",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjcsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9hcGkvYXV0aCIsImlhdCI6MTU0ODAzMDE1NCwiZXhwIjoxNTQ4MDMzNzU0LCJuYmYiOjE1NDgwMzAxNTQsImp0aSI6InZpVmQzWDdZbFZvWkV1WGoifQ.u0fnMevSDuBKT33ULW4BLm_dvBZVvKIqpx5zxPsny98",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{url}}user/advertising/active",
+									"host": [
+										"{{url}}user"
+									],
+									"path": [
+										"advertising",
+										"active"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "List Inactives",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjcsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9hcGkvYXV0aCIsImlhdCI6MTU0ODAzMDE1NCwiZXhwIjoxNTQ4MDMzNzU0LCJuYmYiOjE1NDgwMzAxNTQsImp0aSI6InZpVmQzWDdZbFZvWkV1WGoifQ.u0fnMevSDuBKT33ULW4BLm_dvBZVvKIqpx5zxPsny98",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{url}}user/advertising/inactive",
+									"host": [
+										"{{url}}user"
+									],
+									"path": [
+										"advertising",
+										"inactive"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "List Finished",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjcsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9hcGkvYXV0aCIsImlhdCI6MTU0ODAzMDE1NCwiZXhwIjoxNTQ4MDMzNzU0LCJuYmYiOjE1NDgwMzAxNTQsImp0aSI6InZpVmQzWDdZbFZvWkV1WGoifQ.u0fnMevSDuBKT33ULW4BLm_dvBZVvKIqpx5zxPsny98",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{url}}user/advertising/finished",
+									"host": [
+										"{{url}}user"
+									],
+									"path": [
+										"advertising",
+										"finished"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Eidt My self",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjMxLCJpc3MiOiJodHRwOi8vdHJvY2EubHVieS5jb20uYnIvYXBpL2F1dGgiLCJpYXQiOjE1NTU3ODk3MTAsImV4cCI6MTU1NTc5MzMxMCwibmJmIjoxNTU1Nzg5NzEwLCJqdGkiOiJDYmFuTzc0M1ZaSmtVT1NEIn0.tm5g9xykrMZP_YKv3CcFdaGoPsVh1yR3NB-vJpxosDY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"first_name\":\"Rafael\",\n\t\"last_name\":\"Araújo\",\n\t\"phone\":\"(11) 999999988\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}user/my_self",
+							"host": [
+								"{{url}}user"
+							],
+							"path": [
+								"my_self"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Contact Us",
+			"item": [
+				{
+					"name": "Create Contact",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjcsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9hcGkvYXV0aCIsImlhdCI6MTU0ODM2Mzk1MiwiZXhwIjoxNTQ4MzY3NTUyLCJuYmYiOjE1NDgzNjM5NTIsImp0aSI6Inc2blZwT1hjZkJqYzNGV0gifQ.aS-WxKVKIRuGP54QDeSem1DM7BZJ_2lKB43zH89838E",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"subject\":\"Meu anúncio sumiu\",\n\t\"message\":\"Meu anúncio de um nintendo 64 simplesmente sumiu da minha lista de anúncios, gostatia de saber o que ocorreu, podem me dizer. Aguardo retorno. Esse é o segundo e-mail que envio.\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}contactus",
+							"host": [
+								"{{url}}contactus"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Ratings",
+			"item": [
+				{
+					"name": "Create rating",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjksImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9hcGkvYXV0aCIsImlhdCI6MTU0ODQ0MTQyNiwiZXhwIjoxNTQ4NDQ1MDI2LCJuYmYiOjE1NDg0NDE0MjYsImp0aSI6IjZLbllyN3dTY3hZbHR2cWEifQ.bb6IO4tJg_Imys6LcQTqmQrSRV8mxnMcQzeoFDskk0A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"rating\":\"4.50\",\n\t\"comment\":\"Comentário do usuário\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}rating",
+							"host": [
+								"{{url}}rating"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Terms",
+			"item": [
+				{
+					"name": "Terms of service",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjcsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9hcGkvYXV0aCIsImlhdCI6MTU0OTUwMTkyMSwiZXhwIjoxNTQ5NTA1NTIxLCJuYmYiOjE1NDk1MDE5MjEsImp0aSI6InduQTFialZuVU1zdllLOGUifQ.cw4DTe9wUn0qz9oxjUOf_m-C4CBmoCw7mX6lHf1ZcCg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}terms/terms_of_service",
+							"host": [
+								"{{url}}terms"
+							],
+							"path": [
+								"terms_of_service"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Privacy policy",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjE4LCJpc3MiOiJodHRwOi8vdHJvY2EubHVieS5jb20uYnIvYXBpL2F1dGgiLCJpYXQiOjE1NDk1MDI0MTQsImV4cCI6MTU0OTUwNjAxNCwibmJmIjoxNTQ5NTAyNDE0LCJqdGkiOiJEOTdmTzEyWVg2eWQweW9RIn0.0XIvebhm6O3Ay3zRWjvtw-3_0OxUXSmZAhHkYJe5CzA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}terms/privacy_policy",
+							"host": [
+								"{{url}}terms"
+							],
+							"path": [
+								"privacy_policy"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Payment",
+			"item": [
+				{
+					"name": "Card",
+					"item": [
+						{
+							"name": "Add Card",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjcsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9hcGkvYXV0aCIsImlhdCI6MTU1MDUyMzExMiwiZXhwIjoxNTUwNTI2NzEyLCJuYmYiOjE1NTA1MjMxMTIsImp0aSI6InZpTm4zZm1VRU5IaFBXdk8ifQ.Xx2PqsyId-i9Yo5fzjCH_auA4dMdbxfRVDBDknGsgIo",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"number\":\"4111111111111111\",\n\t\"verification_value\":\"123\",\n\t\"holder\":\"RAFAEL A SILVA\",\n\t\"month\":\"11\",\n\t\"year\":\"2020\",\n\t\"description\":\"Cartão Nubank\",\n\t\"set_as_default\":true,\n\t\"payer\":{\n\t\t\"cpf_cnpj\":\"655.722.120-59\",\n\t\t\"address\":{\n\t\t\t\"zip_code\":\"05410-030\",\n\t\t\t\"street\":\"R Galeno de Almeida\",\n\t\t\t\"number\":\"188\",\n\t\t\t\"complement\":null,\n\t\t\t\"district\":\"Pinheiros\",\n\t\t\t\"city\":\"São Paulo\",\n\t\t\t\"state\":\"SP\"\n\t\t}\n\t}\n}"
+								},
+								"url": {
+									"raw": "{{url}}payment_methods",
+									"host": [
+										"{{url}}payment_methods"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "List",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjcsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9hcGkvYXV0aCIsImlhdCI6MTU1MDUyMzExMiwiZXhwIjoxNTUwNTI2NzEyLCJuYmYiOjE1NTA1MjMxMTIsImp0aSI6InZpTm4zZm1VRU5IaFBXdk8ifQ.Xx2PqsyId-i9Yo5fzjCH_auA4dMdbxfRVDBDknGsgIo",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{url}}payment_methods",
+									"host": [
+										"{{url}}payment_methods"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjcsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9hcGkvYXV0aCIsImlhdCI6MTU1MDUyMzExMiwiZXhwIjoxNTUwNTI2NzEyLCJuYmYiOjE1NTA1MjMxMTIsImp0aSI6InZpTm4zZm1VRU5IaFBXdk8ifQ.Xx2PqsyId-i9Yo5fzjCH_auA4dMdbxfRVDBDknGsgIo",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{url}}payment_methods/7F6B335A3D5B410C8027CDD940CBFB66",
+									"host": [
+										"{{url}}payment_methods"
+									],
+									"path": [
+										"7F6B335A3D5B410C8027CDD940CBFB66"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjcsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9hcGkvYXV0aCIsImlhdCI6MTU1MDUyMzExMiwiZXhwIjoxNTUwNTI2NzEyLCJuYmYiOjE1NTA1MjMxMTIsImp0aSI6InZpTm4zZm1VRU5IaFBXdk8ifQ.Xx2PqsyId-i9Yo5fzjCH_auA4dMdbxfRVDBDknGsgIo",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{url}}payment_methods/3A97E7CB325942188E5274E1C5C1A371",
+									"host": [
+										"{{url}}payment_methods"
+									],
+									"path": [
+										"3A97E7CB325942188E5274E1C5C1A371"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Create invoce",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjI4LCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2F1dGgiLCJpYXQiOjE1NTYzOTY3NzksImV4cCI6MTU1NjQwMzk3OSwibmJmIjoxNTU2Mzk2Nzc5LCJqdGkiOiJCek50NGpiY2ZtUE1TYTRMIn0.CXP2FeqKv5y5BWU2dRKI04hz5Ox-2ywKU6xMYLYCF4Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"payment_id\":\"31BEE90615A3410190E5E1700E605138\",\n\t\"advertising_id\":52,\n\t\"days\":8\n}"
+						},
+						"url": {
+							"raw": "{{url}}invoices",
+							"host": [
+								"{{url}}invoices"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Chat",
+			"item": [
+				{
+					"name": "Store chat",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjcsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9hcGkvYXV0aCIsImlhdCI6MTU1NjI5MDAzNCwiZXhwIjoxNTU2Mjk3MjM0LCJuYmYiOjE1NTYyOTAwMzQsImp0aSI6ImgzbmdlS21nejY5RGFBejMifQ.kwo86m5pbNuDtbOA7gqdILHf8NoTWts4DlAb989CKIg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"advertisement_id\":48\n}"
+						},
+						"url": {
+							"raw": "{{url}}chat",
+							"host": [
+								"{{url}}chat"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get chats",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjE4LCJpc3MiOiJodHRwOi8vdHJvY2EubHVieS5jb20uYnIvYXBpL2F1dGgiLCJpYXQiOjE1NTM4MTA4MDcsImV4cCI6MTU1MzgxNDQwNywibmJmIjoxNTUzODEwODA3LCJqdGkiOiIwakduYWdOSjlaUTBQblBrIn0.UeIkLKft5uC81qYIl-sROcYbzQqX-CZgS-emxGrNIWc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}chat",
+							"host": [
+								"{{url}}chat"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update last message",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjcsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9hcGkvYXV0aCIsImlhdCI6MTU1NjI5MDAzNCwiZXhwIjoxNTU2Mjk3MjM0LCJuYmYiOjE1NTYyOTAwMzQsImp0aSI6ImgzbmdlS21nejY5RGFBejMifQ.kwo86m5pbNuDtbOA7gqdILHf8NoTWts4DlAb989CKIg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"last_message\":\"Última mensagem do chat 4 atualizada\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}chat/6",
+							"host": [
+								"{{url}}chat"
+							],
+							"path": [
+								"6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "forget password",
+			"item": [
+				{
+					"name": "Reset password",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"token\":\"A4FA2\",\n\t\"password\":\"admin1\",\n\t\"password_confirmation\":\"admin1\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}reset_password",
+							"host": [
+								"{{url}}reset_password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Send email with token",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\":\"rafael@luby.com.br\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}lost_password",
+							"host": [
+								"{{url}}lost_password"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer"
+	}
+}
